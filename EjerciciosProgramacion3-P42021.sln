@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HolaMundo", "HolaMundo\Hola
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Semana1", "Semana1", "{EB5BD597-CB80-4FF7-A603-391575DA14DA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Semana2", "Semana2", "{23280BD4-D1F2-44DF-96A9-A4AFD32B4E08}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdivinaMiNumero", "AdivinaMiNumero\AdivinaMiNumero.vcxproj", "{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,12 +27,21 @@ Global
 		{3EB101B7-1CB9-4FD4-B004-D141974763D4}.Release|x64.Build.0 = Release|x64
 		{3EB101B7-1CB9-4FD4-B004-D141974763D4}.Release|x86.ActiveCfg = Release|Win32
 		{3EB101B7-1CB9-4FD4-B004-D141974763D4}.Release|x86.Build.0 = Release|Win32
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Debug|x64.ActiveCfg = Debug|x64
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Debug|x64.Build.0 = Debug|x64
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Debug|x86.ActiveCfg = Debug|Win32
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Debug|x86.Build.0 = Debug|Win32
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Release|x64.ActiveCfg = Release|x64
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Release|x64.Build.0 = Release|x64
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Release|x86.ActiveCfg = Release|Win32
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3EB101B7-1CB9-4FD4-B004-D141974763D4} = {EB5BD597-CB80-4FF7-A603-391575DA14DA}
+		{E79EC0A3-8C5B-44CD-B23A-21813CF1B025} = {23280BD4-D1F2-44DF-96A9-A4AFD32B4E08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B7113CA-8A90-4391-A08B-DB841C46B335}
