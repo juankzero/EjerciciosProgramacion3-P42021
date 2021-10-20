@@ -39,9 +39,14 @@ void juegoPrincipal()
 
 		cin >> numeroIngresado;
 
-		while (!esCorrecto(numeroAdivinar, numeroIngresado))
+		while ( ! esCorrecto(numeroAdivinar, numeroIngresado))
 			cin >> numeroIngresado;
 
+		cout << "Excelente! Has descubierto el numero generado!\n"
+			<< "Deseas volver a jugar? (y o n) ";
+		cin >> respuesta;
+
+		cout << "\n";
 	
 	} while ( respuesta == 'y' );
 
@@ -50,4 +55,13 @@ void juegoPrincipal()
 
 bool esCorrecto(int _numeroAdivinar, int _numeroIngresado) 
 {
+	if (_numeroAdivinar == _numeroIngresado)
+		return true;
+
+	if (_numeroIngresado < _numeroAdivinar)
+		cout << "Muy bajo. Intentalo de nuevo.\n? ";
+	else
+		cout << "Muy alto. Intentalo de nuevo.\n? ";
+	
+	return false;
 }
