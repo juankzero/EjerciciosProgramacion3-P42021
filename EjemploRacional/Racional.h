@@ -20,6 +20,7 @@ public:
 	Racional restar(Racional);
 	Racional multiplicar(Racional);
 	Racional dividir(Racional);
+	Racional potencia(int);
 
 };
 
