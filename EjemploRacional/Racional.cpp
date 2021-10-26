@@ -36,7 +36,7 @@ Racional::Racional() : numerador(1), denominador(1)
 Racional::Racional(int _numerador, int _denominador) 
 	: numerador(_numerador), denominador(_denominador)
 {
-	//simplificar();
+	simplificar();
 }
 
 void Racional::imprimirRacional()
