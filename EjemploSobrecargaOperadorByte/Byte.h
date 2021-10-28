@@ -20,7 +20,7 @@ public:
 	Byte();
 	Byte(const char*);
 
-
+	int obtenerDecimal();
 
 };
 
