@@ -22,6 +22,12 @@ public:
 
 	int obtenerDecimal();
 
+	Byte& operator&(const Byte&);
+	void operator|(const Byte&);
+
+	Byte& operator++(); //preincremento
+	Byte& operator++(int); //posincremento
+
 };
 
 #endif // !BYTE_H

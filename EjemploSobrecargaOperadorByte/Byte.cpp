@@ -19,6 +19,47 @@ Byte::Byte(const char* _bits)
 
 }
 
+Byte& Byte::operator&(const Byte& _b2)
+{
+	
+	Byte resultado;
+
+	for (int i = 8 - 1; i >= 0; i-- ) 
+	{
+		if (this->bits[i] == 1 && _b2.bits[i] == 1)
+			resultado.bits[i] = 1;
+		else
+			resultado.bits[i] = 0;
+	}
+
+	return resultado;
+}
+
+void Byte::operator|(const Byte& _b2)
+{
+	for (int i = 8 - 1; i >= 0; i-- ) 
+	{
+		if (this->bits[i] == 0 && _b2.bits[i] == 0)
+			this->bits[i] = 0;
+		else
+			this->bits[i] = 1;
+	}
+}
+
+Byte& Byte::operator++()
+{
+	*this = *this + Byte("00000001");
+	return *this;
+}
+
+Byte& Byte::operator++(int)
+{
+	Byte resultado = *this;	
+	*this = *this + Byte("00000001");
+
+	return resultado;
+}
+
 Byte& operator+(const Byte& _b1, const Byte& _b2)
 {
 	Byte resultado;
