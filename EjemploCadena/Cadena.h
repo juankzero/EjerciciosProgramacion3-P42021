@@ -19,6 +19,8 @@ public:
 
 	int size();
 	char at(int);
+	Cadena substring(int, int);
+	Cadena subcadena(int, int);
 
 };
 
