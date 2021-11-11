@@ -43,7 +43,7 @@ int main()
 
 	cout << "Nombre completo: " << nombreCompleto;*/
 
-	const char* nombreJugador = "Lionel";
+	/*const char* nombreJugador = "Lionel";
 	const char* apellidoJugador = "Messi";
 
 	cout << "Longitud de nombre: " << strlen(nombreJugador);
@@ -61,6 +61,29 @@ int main()
 
 	//cout << "\nNombre completo de jugador: " << nombreCompleto;
 	printf("\nNombre completo de jugador: %s", nombreCompleto);
+	*/
+
+	char arrayFijo[10] = "Hola";
+	char* arrayDinamico;
+	char caracter = 'P';
+
+	arrayDinamico = arrayFijo;
+	//strcpy_s(arrayDinamico)
+	
+	//x caracter = new char[10];
+
+
+	cout << "\nArrayFijo { " << arrayFijo << " }";
+	cout << "\nArrayDinamico { " << arrayDinamico << " }";
+	//cout << "Caracter { " << caracter << " }";
+
+	strcpy_s(arrayFijo, strlen("Maria") + 1, "Maria");
+
+	cout << "\nArrayDinamico { " << arrayDinamico << " }";
+
+	strcpy_s(arrayDinamico, strlen("123456789012") + 1, "123456789012");
+
+	cout << "\nArrayFijo { " << arrayFijo << " }";
 
 
 	_getch();
