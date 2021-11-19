@@ -16,7 +16,7 @@ public:
 
 	//overriding
 	void deposito(float);
-	void retiro(float);
+	bool retiro(float);
 };
 
 #endif // !CHEQUE_H

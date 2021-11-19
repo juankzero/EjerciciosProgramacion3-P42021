@@ -29,15 +29,16 @@ void Cuenta::deposito(float _cantidad)
 	saldo += _cantidad;
 }
 
-void Cuenta::retiro(float _cantidad)
+bool Cuenta::retiro(float _cantidad)
 {
 	if (_cantidad > saldo)
 	{
 		throw invalid_argument("\n- Cargo a la cuenta excede el saldo actual");
-		return;
+		return false;
 	}
 
 	saldo -= _cantidad;
+	return true;
 }
 
 void Cuenta::establecerSaldo(float _saldoActualizado)

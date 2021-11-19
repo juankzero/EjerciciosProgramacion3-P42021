@@ -12,7 +12,7 @@ private:
 	float intereses;
 
 public:
-	Ahorro(char*, float, float);
+	Ahorro(const char*, float, float);
 
 	float calcularIntereses();
 

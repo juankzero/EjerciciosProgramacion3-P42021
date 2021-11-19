@@ -9,7 +9,7 @@ public:
 	Cuenta(const char*, float);
 
 	void deposito(float);
-	void retiro(float);
+	bool retiro(float);
 
 	void establecerSaldo(float);
 	float obtenerSaldo();
