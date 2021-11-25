@@ -9,7 +9,7 @@ class TrianguloRectangulo : public Figura2D
 {
 private:
 	float base, altura;
-	float obtenerHipotenusa();
+	
 
 public:
 	TrianguloRectangulo(void);
@@ -20,6 +20,8 @@ public:
 	float obtenerPerimetro();
 	void imprimirFigura();
 	TipoInstancia obtenerInstancia();
+
+	float obtenerHipotenusa();
 };
 
 
