@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ListaSimple.h" />
     <ClInclude Include="Nodo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ListaSimple.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Nodo.cpp" />
   </ItemGroup>
