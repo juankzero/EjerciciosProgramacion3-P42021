@@ -74,3 +74,64 @@ void ListaCircular::imprimir()
 
 	std::cout << "\n";
 }
+
+void ListaCircular::imprimirReversa()
+{
+	if (estaVacia())
+		return;
+
+	Nodo* actual = ultimo;
+
+	do
+	{
+		std::cout << "[ " << actual->getValor() << " ] ";
+		actual = actual->getAnterior();
+
+	} while (actual != ultimo);
+
+	std::cout << "\n";
+
+}
+
+void ListaCircular::eliminarElemento(int _valor) //valor de nodo a eliminar
+{
+	if (estaVacia())
+		return;
+
+	Nodo* actual = primero;
+
+	do 
+	{
+		if (actual->getValor() == _valor)
+		{
+			if (actual == primero)
+			{
+				primero = actual->getSiguiente();
+
+				primero->setAnterior(ultimo);
+				ultimo->setSiguiente(primero);
+			}
+			else if (actual == ultimo)
+			{
+				ultimo = actual->getAnterior();
+
+				primero->setAnterior(ultimo);
+				ultimo->setSiguiente(primero);
+			}
+			else
+			{
+				actual->getAnterior()->setSiguiente(actual->getSiguiente());
+				actual->getSiguiente()->setAnterior(actual->getAnterior());
+			}
+
+			delete actual;
+			return;
+
+		}
+
+		actual = actual->getSiguiente();
+
+	} while (actual != primero);
+
+
+}

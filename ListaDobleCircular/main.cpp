@@ -12,6 +12,23 @@ int main()
 	lc.agregarElemento(8);
 
 	lc.imprimir();
+	lc.imprimirReversa();
+
+	lc.eliminarElemento(8);
+
+	lc.imprimir();
+
+	lc.eliminarElemento(4);
+
+	lc.imprimir();
+
+	lc.agregarElemento(7);
+
+	lc.imprimir();
+
+	lc.eliminarElemento(5);
+
+	lc.imprimir();
 
 
 
