@@ -77,7 +77,29 @@ void ListaSimple::imprimirLista()
 		actual = actual->getSiguiente();
 	}
 
+	cout << "\nsizeof(Nodo*): " << sizeof(primero);
+	cout << "\nsizeof(Nodo): " << sizeof(Nodo);
 	cout << "\n";
+}
+
+int ListaSimple::tamanoLista()
+{
+	if (estaVacia())
+		return 0;
+
+	Nodo* actual = primero;
+	int cantidadNodos = 0;
+
+	do
+	{
+		cantidadNodos++;
+
+		actual = actual->getSiguiente();
+
+	} while (actual != nullptr);
+
+	return cantidadNodos;
+
 }
 
 

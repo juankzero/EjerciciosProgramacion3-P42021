@@ -1,4 +1,5 @@
 #include <conio.h>
+#include <iostream>
 
 #include "ListaSimple.h"
 
@@ -14,7 +15,11 @@ int main()
 
 	ls.imprimirLista();
 
-	ls.eliminarNodo(8);
+	std::cout << "\nCantidad de elementos: " << ls.tamanoLista();
+
+
+
+	/*ls.eliminarNodo(8);
 
 	ls.imprimirLista();
 
@@ -24,7 +29,7 @@ int main()
 
 	ls.eliminarNodo(2);
 
-	ls.imprimirLista();
+	ls.imprimirLista();*/
 
 	_getch();
 }
