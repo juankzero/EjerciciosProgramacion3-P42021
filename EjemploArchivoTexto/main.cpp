@@ -5,8 +5,9 @@
 
 int main() 
 {
-
 	Empresa::agregarEmpleados();
+
+	Empresa::obtenerEmpleados();
 
 	_getch();
 }

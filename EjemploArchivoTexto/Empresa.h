@@ -8,6 +8,7 @@ class Empresa
 public:
 
 	static void agregarEmpleados();
+	static void obtenerEmpleados();
 
 };
 
