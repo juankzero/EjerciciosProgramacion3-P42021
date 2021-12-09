@@ -36,18 +36,21 @@ void lecturaCsv()
 	string linea;
 
 	int cantidadRegistros = 0;
-	while (cantidadRegistros < 20) 
+	while (cantidadRegistros < 30 + 1) 
 	{
 		//lectura de una fila/linea en archivo
 		getline(archivocsv, linea);
-		cantidadRegistros++;
 
 		stringstream ss(linea);
 
 		int posCaracter = 0;
 
-		cout << "\nRegister " << cantidadRegistros << ":\n";
+		if (cantidadRegistros == 0)
+			cout << "Header:\n";
+		else
+			cout << "\nRegister " << cantidadRegistros << ":\n";
 
+		
 		//recorrido por la cantidad de campos
 		for (int i = 0; i < 20; i++) 
 		{
@@ -64,6 +67,8 @@ void lecturaCsv()
 					getline(ss, valor, '\"');
 
 					posCaracter += valor.length() + 2 + 1;
+
+					getline(ss, aux, ',');
 				}
 				else
 				{
@@ -88,10 +93,11 @@ void lecturaCsv()
 						posCaracAux += 2;
 						goto section;
 					}
-
+					
 				}
 
-				getline(ss, aux, ',');
+				//getline(ss, aux, ',');
+
 			}
 			else
 			{
@@ -100,16 +106,15 @@ void lecturaCsv()
 				posCaracter += valor.length() + 1;
 			}
 
-			if (i < 4)
-			{
-				if(i == 2)
-					cout << artists.size() << " " << valor << "\t";
-				else
-					cout << valor << "\t";
-			}
 
+			if(i == 2)
+				cout << artists.size() << " " << valor << "\t";
+			else if (i == 7 || i == 13 || i == 15)
+				cout << valor << "\t";
+			
 		}
 
+		cantidadRegistros++;
 	}
 
 }
