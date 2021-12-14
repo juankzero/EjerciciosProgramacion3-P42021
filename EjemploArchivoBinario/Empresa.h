@@ -16,6 +16,8 @@ class EmpresaBin
 public:
 	static void agregarEmpleados();
 	static void consultarEmpleados();
+
+	static void modificarEmpleado(int);
 };
 
 #endif // !EMPRESA_H

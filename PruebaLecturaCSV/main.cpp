@@ -109,7 +109,7 @@ void lecturaCsv()
 
 			if(i == 2)
 				cout << artists.size() << " " << valor << "\t";
-			else if (i == 7 || i == 13 || i == 15)
+			else //if (i == 7 || i == 13 || i == 15)
 				cout << valor << "\t";
 			
 		}

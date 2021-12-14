@@ -57,3 +57,81 @@ void EmpresaBin::agregarEmpleados()
 	archivoEmpleado.close();
 
 }
+
+void EmpresaBin::consultarEmpleados()
+{
+	cout << "***  I M P R I M I R  E M P L E A D O S ***\n\n";
+
+	ifstream archivoEmpleado("empleados.bin", ios::in | ios::binary);
+
+	if (!archivoEmpleado)
+	{
+		cout << "Error al intentar abrir el archivo empleados.bin\n";
+		return;
+	}
+
+	//seekg -> permite colocar el cursor de lectura en una posicion x
+
+	//colocar el cursor de lectura en el byte 0 (inicio del archivo)
+	archivoEmpleado.seekg(0, ios::beg);
+
+	Empleado actual;
+	archivoEmpleado.read(reinterpret_cast<char*>(&actual), sizeof(Empleado));
+
+	//si es el final del archivo (end of file)
+	while (!archivoEmpleado.eof()) 
+	{
+		cout << "Empleado { codigo: " << actual.codigoEmpleado << ", nombre: " <<
+			actual.nombreEmpleado << ", codigoDpto: " << actual.codigoDepartamento <<
+			", salario: " << actual.salarioEmpleado << " }\n";
+		
+		archivoEmpleado.read(reinterpret_cast<char*>(&actual), sizeof(Empleado));
+	}
+
+	archivoEmpleado.close();
+
+}
+
+void EmpresaBin::modificarEmpleado(int _codigoEmpleado)
+{
+	fstream archivoEmpleado("empleados.bin", ios::in | ios::out | ios::binary);
+
+	if (!archivoEmpleado)
+	{
+		cout << "Error al intentar abrir el archivo empleados.bin\n";
+		return;
+	}
+
+	archivoEmpleado.seekg(0, ios::beg);
+	long posicionArchivo = 0;
+
+	Empleado actual;
+	archivoEmpleado.read(reinterpret_cast<char*>(&actual), sizeof(Empleado));
+
+	
+
+	while (!archivoEmpleado.eof()) 
+	{
+		if (actual.codigoEmpleado == _codigoEmpleado)
+		{
+			cout << "Indique salario a modificar: ";
+			float nuevoSalario;
+			cin >> nuevoSalario;
+			actual.salarioEmpleado = nuevoSalario;
+
+			archivoEmpleado.seekp(posicionArchivo, ios::beg);
+			archivoEmpleado.write(reinterpret_cast<const char*>(&actual), sizeof(Empleado));
+			archivoEmpleado.close();
+
+			cout << "Registro modificado!\n";
+			return;
+
+		}
+		posicionArchivo = archivoEmpleado.tellg();
+		archivoEmpleado.read(reinterpret_cast<char*>(&actual), sizeof(Empleado));
+	}
+
+	cout << "Registro no encontrado!\n";
+	archivoEmpleado.close();
+
+}
